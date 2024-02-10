@@ -1,6 +1,6 @@
 {
     "replace": false,
     "values": [
-        "sight_shoot:load"
+        "raycast:load"
     ]
 }
