@@ -1,6 +1,6 @@
 {
     "replace": false,
     "values": [
-        "raycast:load"
+        "shotcast:load"
     ]
 }
