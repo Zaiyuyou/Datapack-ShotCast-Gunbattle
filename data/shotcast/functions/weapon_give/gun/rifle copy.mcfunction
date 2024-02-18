@@ -1,0 +1,1 @@
+give @p minecraft:crossbow{Tags:["zyy.shotcast.weapon","zyy.shotcast.weapon.gun","zyy.shotcast.weapon.gun.rifle"],ChargedProjectiles:[{Count:1b,id:"minecraft:tipped_arrow",tag:{Potion:"minecraft:water"}}],Damage:0,Charged:1b}

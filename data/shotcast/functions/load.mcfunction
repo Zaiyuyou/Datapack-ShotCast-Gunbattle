@@ -5,10 +5,13 @@ gamerule doImmediateRespawn true
 scoreboard objectives add zyy.shotcast.uid dummy "射击实体ID"
 scoreboard objectives add zyy.shotcast.teamid dummy "射击队伍ID"
 
+
+scoreboard objectives add zyy.shotcast.lifetime dummy "生存时间"
+
 scoreboard objectives add zyy.shotcast.opr_1 dummy "计算池1"
 
 
-scoreboard objectives add zyy.shotcast.gun.used minecraft.used:minecraft.crossbow "射击次数"
+scoreboard objectives add zyy.shotcast.weapon.gun.used minecraft.used:minecraft.crossbow "射击次数"
 scoreboard objectives add zyy.shotcast.last.gun.used dummy "上一次射击次数"
 
 scoreboard objectives add zyy.shotcast.death deathCount "死亡次数"
