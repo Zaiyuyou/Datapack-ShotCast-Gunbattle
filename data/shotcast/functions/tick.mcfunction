@@ -9,18 +9,23 @@ scoreboard players operation @p[scores={zyy.shotcast.uid=0}] zyy.shotcast.uid = 
 
 
 #主计时器+1
-scoreboard players add main_tick zyy.shotcast.uid 1
+scoreboard players add main_tick zyy.shotcast.lifetime 1
 
 
 #箭矢初始化
-execute as @e[type=arrow,tag=!zyy.shotcast.modified_motion] run function shotcast:emission_behave/emission_init_router
+execute as @e[type=arrow,tag=!zyy.shotcast.modified] run function shotcast:emission_init/emission_init_router
+execute as @e[type=spectral_arrow,tag=!zyy.shotcast.modified] run function shotcast:emission_init/emission_init_router
 
 
 #给玩家枪
-function shotcast:player_behave/use_weapon/use_weapon_router
 #玩家使用检测
-execute as @a run execute if score @s zyy.shotcast.last.gun.used < @s zyy.shotcast.weapon.gun.used run function shotcast:player_behave/use_weapon/use_weapon_router
+function shotcast:player_behave/use_weapon/use_weapon_router
+function shotcast:player_behave/use_weapon/load_ammo_router
 
+
+
+execute as @e[type=item,nbt={Item:{tag:{Tags:["zyy.shotcast.weapon"]}}}] run function shotcast:item_cannot_drop
+execute as @e[type=item,nbt={Item:{tag:{Tags:["zyy.shotcast.ammo"]}}}] run function shotcast:item_cannot_drop
 
 #箭矢击中地形后的收尾工作：
 function shotcast:emission_behave/shot_inblock_determ

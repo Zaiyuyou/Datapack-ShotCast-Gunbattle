@@ -1,0 +1,15 @@
+{
+    "criteria": {
+      "requirement": {
+        "trigger": "minecraft:entity_killed_player",
+        "conditions": {
+          "player": [],
+          "entity": []
+        }
+      }
+    },
+    "rewards": {
+      "function": "shotcast:player_behave/dead/test"
+    }
+  }
+  

@@ -1,1 +1,0 @@
-loot replace entity @s weapon.mainhand loot shotcast:weapon/thrower/searchbomb

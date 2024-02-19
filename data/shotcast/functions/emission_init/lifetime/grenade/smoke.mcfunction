@@ -1,0 +1,1 @@
+scoreboard players set @s zyy.shotcast.lifetime 400

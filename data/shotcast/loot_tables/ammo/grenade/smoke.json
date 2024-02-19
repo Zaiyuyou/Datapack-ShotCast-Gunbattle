@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:empty",
+    "pools": [
+      {
+        "rolls": 1,
+        "bonus_rolls": 0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:tipped_arrow",
+            "functions": [
+              {
+                "function": "minecraft:set_nbt",
+                "tag": "{Tags:[\"zyy.shotcast.ammo\",\"zyy.shotcast.ammo.grenade.smoke\"],Potion:\"invisibility\",display:{Name:\"[{\\\"text\\\":\\\"[烟雾弹/Smoke]\\\\n\\\",\\\"color\\\":\\\"aqua\\\",\\\"bold\\\":true,\\\"italic\\\":false,\\\"underlined\\\":false,\\\"strikethrough\\\":false,\\\"obfuscated\\\":false}]\",Lore:[\"{\\\"text\\\":\\\"落地后释放烟雾\\\",\\\"bold\\\":false,\\\"italic\\\":false,\\\"underlined\\\":false,\\\"strikethrough\\\":false,\\\"obfuscated\\\":false}\",\"{\\\"text\\\":\\\"放在副手以使用\\\",\\\"bold\\\":true,\\\"italic\\\":false,\\\"underlined\\\":true,\\\"strikethrough\\\":false,\\\"obfuscated\\\":false}\"]}}"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  

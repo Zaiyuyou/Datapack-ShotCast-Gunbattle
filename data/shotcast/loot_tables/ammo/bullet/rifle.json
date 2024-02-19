@@ -11,7 +11,7 @@
             "functions": [
               {
                 "function": "minecraft:set_nbt",
-                "tag": "{Tags:[\"zyy.shotcast.ammo\",\"zyy.shotcast.ammo.bullet.rifle\"],Potion:\"minecraft:water\",display:{Name:\"[{\\\"text\\\":\\\"[步枪子弹/Rifle Bullet]\\\\n\\\",\\\"color\\\":\\\"aqua\\\",\\\"bold\\\":true,\\\"italic\\\":false,\\\"underlined\\\":false,\\\"strikethrough\\\":false,\\\"obfuscated\\\":false}]\",Lore:[\"{\\\"text\\\":\\\"放在副手以使用\\\",\\\"bold\\\":false,\\\"italic\\\":false,\\\"underlined\\\":false,\\\"strikethrough\\\":false,\\\"obfuscated\\\":false}\",\"{\\\"text\\\":\\\"Selected in off-hand for use\\\",\\\"bold\\\":false,\\\"italic\\\":false,\\\"underlined\\\":false,\\\"strikethrough\\\":false,\\\"obfuscated\\\":false}\"]}}"
+                "tag": "{Tags:[\"zyy.shotcast.ammo\",\"zyy.shotcast.ammo.bullet.rifle\"],Potion:\"minecraft:thick\",display:{Name:\"[{\\\"text\\\":\\\"[步枪子弹/Rifle Bullet]\\\\n\\\",\\\"color\\\":\\\"aqua\\\",\\\"bold\\\":true,\\\"italic\\\":false,\\\"underlined\\\":false,\\\"strikethrough\\\":false,\\\"obfuscated\\\":false}]\"}}"
               }
             ]
           }

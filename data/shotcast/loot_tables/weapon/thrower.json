@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:empty",
+    "pools": [
+      {
+        "rolls": 1,
+        "bonus_rolls": 0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:crossbow",
+            "functions": [
+              {
+                "function": "minecraft:set_nbt",
+                "tag": "{Tags:[\"zyy.shotcast.weapon\",\"zyy.shotcast.weapon.thrower\"],display:{Name:\"[{\\\"text\\\":\\\"[榴弹发射器|Grenade Thrower]\\\",\\\"bold\\\":true,\\\"italic\\\":false,\\\"underlined\\\":false,\\\"strikethrough\\\":false,\\\"obfuscated\\\":false}]\",Lore:[\"{\\\"text\\\":\\\"较低的出膛速度和射程\\\",\\\"bold\\\":false,\\\"italic\\\":false,\\\"underlined\\\":false,\\\"strikethrough\\\":false,\\\"obfuscated\\\":false}\",\"{\\\"text\\\":\\\"！需要副手装备对应弹药！\\\",\\\"bold\\\":true,\\\"italic\\\":false,\\\"underlined\\\":true,\\\"strikethrough\\\":false,\\\"obfuscated\\\":false}\"]},HideFlags:33,Enchantments:[{id:\"minecraft:unbreaking\",lvl:32767s},{id:\"minecraft:quick_charge\",lvl:32767s}],AttributeModifiers:[{AttributeName:\"generic.movement_speed\",Name:\"MoveSpeed\",Amount:-0.08d,Operation:1,UUID:[I;8848,7589,5251,5353],Slot:mainhand},{AttributeName:\"generic.movement_speed\",Name:\"MoveSpeed\",Amount:-0.08d,Operation:1,UUID:[I;8848,7589,5251,5353],Slot:offhand}],Charged:1b}"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  

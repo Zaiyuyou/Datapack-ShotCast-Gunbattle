@@ -5,9 +5,6 @@ tag @e remove zyy.shotcast.selector.teamid.same
 
 tag @s add zyy.shotcast.selector.teamid.pointer
 
-execute as @a run scoreboard players operation @s zyy.shotcast.opr_1 = @s zyy.shotcast.teamid
-execute as @a run scoreboard players operation @s zyy.shotcast.opr_1 -= @e[tag=zyy.shotcast.selector.teamid.pointer,limit=1] zyy.shotcast.teamid
+execute as @a run execute if score @s zyy.shotcast.teamid = @e[tag=zyy.shotcast.selector.teamid.pointer,limit=1] zyy.shotcast.teamid run tag @s add zyy.shotcast.selector.teamid.same
 
 
-
-tag @a[scores={zyy.shotcast.opr_1=0}] add zyy.shotcast.selector.teamid.same

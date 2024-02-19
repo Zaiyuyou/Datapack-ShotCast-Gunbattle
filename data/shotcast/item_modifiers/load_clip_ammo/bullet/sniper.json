@@ -1,0 +1,11 @@
+[
+  {
+    "function": "minecraft:set_damage",
+    "damage": 0.1,
+    "add": true
+  },
+  {
+    "function": "minecraft:set_nbt",
+    "tag": "{Charged:0b}"
+  }
+]

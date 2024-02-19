@@ -1,31 +1,26 @@
-#clear @a crossbow{Tags:["zyy.shotcast.weapon"]} 
-
-#give @s crossbow{Tags:["zyy.shotcast.weapon"]}
 
 
-#步枪
-execute as @a[nbt={SelectedItem:{id:"minecraft:crossbow",tag:{Tags:["zyy.shotcast.weapon.gun.rifle"],Charged:0b}},Inventory:[{Slot:-106b,id:"minecraft:tipped_arrow",tag:{Tags:["zyy.shotcast.ammo.bullet.rifle"]}}]}] run function shotcast:player_behave/use_weapon/use_stream/gun/rifle
-#狙击枪
-loot replace entity @a[nbt={SelectedItem:{id:"minecraft:crossbow",tag:{Tags:["zyy.shotcast.weapon.gun.sniper"],Charged:0b}},Inventory:[{Slot:-106b,id:"minecraft:tipped_arrow",tag:{Tags:["zyy.shotcast.ammo.bullet.sniper"]}}]}] weapon.mainhand loot shotcast:weapon/gun/sniper
-#探照弹发射器
-loot replace entity @a[nbt={SelectedItem:{id:"minecraft:crossbow",tag:{Tags:["zyy.shotcast.weapon.thrower.searchbomb"],Charged:0b}},Inventory:[{Slot:-106b,id:"minecraft:tipped_arrow",tag:{Tags:["zyy.shotcast.ammo.grenade.searchbomb"]}}]}] weapon.mainhand loot shotcast:weapon/thrower/searchbomb
+##枪械冷却
+scoreboard players add @a zyy.shotcast.weapon.cooldown.shoot 0
+scoreboard players set @a[scores={zyy.shotcast.weapon.cooldown.shoot=..-1}] zyy.shotcast.weapon.cooldown.shoot 0
+scoreboard players remove @a[scores={zyy.shotcast.weapon.cooldown.shoot=1..}] zyy.shotcast.weapon.cooldown.shoot 1
+
+##步枪
+#刷新换弹cd以及手持id
+execute as @a[nbt={SelectedItem:{id:"minecraft:crossbow",tag:{Tags:["zyy.shotcast.weapon.gun.rifle"]}}}] run execute unless score @s zyy.shotcast.weapon.main_weapon_id = gun.rifle zyy.shotcast.weapon.main_weapon_id run function shotcast:player_behave/use_weapon/switched_main_weapon/gun/rifle
+execute as @a[nbt={SelectedItem:{id:"minecraft:crossbow",tag:{Tags:["zyy.shotcast.weapon.gun.rifle"],Charged:0b}}},scores={zyy.shotcast.weapon.cooldown.shoot=0}] run function shotcast:player_behave/use_weapon/remove_clip_ammo/bullet/rifle
+
+###狙击枪
+#刷新换弹cd以及手持id
+execute as @a[nbt={SelectedItem:{id:"minecraft:crossbow",tag:{Tags:["zyy.shotcast.weapon.gun.sniper"]}}}] run execute unless score @s zyy.shotcast.weapon.main_weapon_id = gun.sniper zyy.shotcast.weapon.main_weapon_id run function shotcast:player_behave/use_weapon/switched_main_weapon/gun/sniper
+
+execute as @a[nbt={SelectedItem:{id:"minecraft:crossbow",tag:{Tags:["zyy.shotcast.weapon.gun.sniper"],Charged:0b}}},scores={zyy.shotcast.weapon.cooldown.shoot=0}] run function shotcast:player_behave/use_weapon/remove_clip_ammo/bullet/sniper
 
 
 
-
-
-
-
-
-#清除弹药
-execute as @s[nbt={SelectedItem:{id:"minecraft:crossbow",tag:{Tags:["zyy.shotcast.weapon.gun.rifle"],Charged:0b}},Inventory:[{Slot:-106b,id:"minecraft:tipped_arrow",tag:{Tags:["zyy.shotcast.ammo.bullet.rifle"]}}]},gamemode=!creative] run function shotcast:player_behave/use_weapon/ammo_remove/bullet/rifle
-execute as @s[nbt={SelectedItem:{id:"minecraft:crossbow",tag:{Tags:["zyy.shotcast.weapon.gun.sniper"],Charged:0b}},Inventory:[{Slot:-106b,id:"minecraft:tipped_arrow",tag:{Tags:["zyy.shotcast.ammo.bullet.sniper"]}}]},gamemode=!creative] run function shotcast:player_behave/use_weapon/ammo_remove/bullet/sniper
-execute as @s[nbt={SelectedItem:{id:"minecraft:crossbow",tag:{Tags:["zyy.shotcast.weapon.thrower.searchbomb"],Charged:0b}},Inventory:[{Slot:-106b,id:"minecraft:tipped_arrow",tag:{Tags:["zyy.shotcast.ammo.grenade.searchbomb"]}}]},gamemode=!creative] run function shotcast:player_behave/use_weapon/ammo_remove/grenade/searchbomb
-
-title @s actionbar "你处于创造模式，射击不消耗弹药"
-
-
-#枪械冷却
-
-#Tail
+##Tail
+#弹匣归零则去除留膛弹药
+execute as @a run execute if entity @s[nbt={SelectedItem:{id:"minecraft:crossbow",tag:{Tags:["zyy.shotcast.weapon"],Damage:465,Charged:1b}}}] run item modify entity @s weapon.mainhand shotcast:remove_clip_ammo/template/uncharged
+#重置枪械使用次数
 scoreboard players operation @s zyy.shotcast.last.gun.used = @s zyy.shotcast.weapon.gun.used
+

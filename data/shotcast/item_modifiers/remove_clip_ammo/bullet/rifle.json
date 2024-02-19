@@ -1,0 +1,11 @@
+[
+    {
+      "function": "minecraft:set_damage",
+      "damage": -0.033,
+      "add": true
+    },
+    {
+      "function": "minecraft:set_nbt",
+      "tag": "{Charged:1b,ChargedProjectiles:[{id:\"minecraft:tipped_arrow\",tag:{Potion:\"minecraft:water\"},Count:1b}]}"
+    }
+  ]

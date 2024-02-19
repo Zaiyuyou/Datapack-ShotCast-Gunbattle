@@ -11,7 +11,7 @@
             "functions": [
               {
                 "function": "minecraft:set_nbt",
-                "tag": "{Tags:[\"zyy.shotcast.weapon\",\"zyy.shotcast.weapon.gun\",\"zyy.shotcast.weapon.gun.sniper\"],ChargedProjectiles:[{id:\"minecraft:tipped_arrow\",tag:{Potion:\"minecraft:thick\"},Count:1b}],display:{Name:\"[{\\\"text\\\":\\\"[狙击枪|Sniper]\\\",\\\"bold\\\":true,\\\"italic\\\":false,\\\"underlined\\\":false,\\\"strikethrough\\\":false,\\\"obfuscated\\\":false}]\",Lore:[\"{\\\"text\\\":\\\"很高的出膛速度和射程\\\",\\\"bold\\\":false,\\\"italic\\\":false,\\\"underlined\\\":false,\\\"strikethrough\\\":false,\\\"obfuscated\\\":false}\"]},HideFlags:33,Enchantments:[{id:\"minecraft:quick_charge\",lvl:100s}],Charged:1b}"
+                "tag": "{Charged:0b,Tags:[\"zyy.shotcast.weapon\",\"zyy.shotcast.weapon.gun\",\"zyy.shotcast.weapon.gun.sniper\"],display:{Name:\"[{\\\"text\\\":\\\"[狙击枪|Sniper]\\\",\\\"bold\\\":true,\\\"italic\\\":false,\\\"underlined\\\":false,\\\"strikethrough\\\":false,\\\"obfuscated\\\":false}]\",Lore:[\"{\\\"text\\\":\\\"很高的出膛速度和射程\\\",\\\"bold\\\":false,\\\"italic\\\":false,\\\"underlined\\\":false,\\\"strikethrough\\\":false,\\\"obfuscated\\\":false}\"]},HideFlags:33,Enchantments:[{id:\"minecraft:unbreaking\",lvl:32767s},{id:\"minecraft:quick_charge\",lvl:32767s},],AttributeModifiers:[{AttributeName:\"generic.movement_speed\",Name:\"MoveSpeed\",Amount:-0.3d,Operation:1,UUID:[I;8848,7589,5251,5353],Slot:mainhand},{AttributeName:\"generic.movement_speed\",Name:\"MoveSpeed\",Amount:-0.3d,Operation:1,UUID:[I;8848,7589,5251,5353],Slot:offhand}]}"
               }
             ]
           }
@@ -19,4 +19,5 @@
       }
     ]
   }
-  
+
+            
