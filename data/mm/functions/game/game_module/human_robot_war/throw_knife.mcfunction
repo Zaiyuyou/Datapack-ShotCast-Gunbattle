@@ -1,0 +1,1 @@
+function mm:game/game_module/showdown/throw_knife

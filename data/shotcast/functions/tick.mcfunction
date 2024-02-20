@@ -24,7 +24,8 @@ function shotcast:player_behave/use_weapon/load_ammo_router
 
 
 
-execute as @e[type=item,nbt={Item:{tag:{Tags:["zyy.shotcast.weapon"]}}}] run function shotcast:item_cannot_drop
+execute as @e[type=item,nbt={Item:{tag:{Tags:["zyy.shotcast.weapon.gun"]}}}] run function shotcast:item_cannot_drop
+execute as @e[type=item,nbt={Item:{tag:{Tags:["zyy.shotcast.weapon.thrower"]}}}] run function shotcast:item_cannot_drop
 execute as @e[type=item,nbt={Item:{tag:{Tags:["zyy.shotcast.ammo"]}}}] run function shotcast:item_cannot_drop
 
 #箭矢击中地形后的收尾工作：

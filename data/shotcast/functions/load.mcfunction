@@ -1,4 +1,6 @@
 
+
+#
 gamerule fallDamage false
 gamerule doImmediateRespawn true
 
@@ -10,6 +12,15 @@ scoreboard objectives add zyy.shotcast.lifetime dummy "生存时间"
 
 scoreboard objectives add zyy.shotcast.opr_1 dummy "计算池1"
 
+##检查依赖
+
+scoreboard players set test_minigame_master mm_package_versions -1
+scoreboard players set mm_shootcast_load zyy.shotcast.uid -1
+scoreboard players reset mm_shootcast_load zyy.shotcast.uid 
+scoreboard players operation test_minigame_master mm_package_versions = minigame_master mm_package_versions
+
+execute if score test_minigame_master mm_package_versions >= 29 zyy.shotcast.constant run tellraw @a [{"text":"[枪械附属] v0.0.1 ","color":"aqua"},{"text":"已检测到游戏大师前置。","color":"green"}]
+execute if score test_minigame_master mm_package_versions >= 29 zyy.shotcast.constant run scoreboard players set mm_shootcast_load zyy.shotcast.uid 1
 
 
 #射击
@@ -19,21 +30,20 @@ scoreboard objectives add zyy.shotcast.last.gun.used dummy "上一次射击次�
 
 scoreboard objectives add zyy.shotcast.weapon.cooldown.shoot dummy "枪射击冷却"
 scoreboard objectives add zyy.shotcast.weapon.cooldown.load dummy "枪射击冷却"
-scoreboard objectives add zyy.shotcast.weapon.main_weapon_id dummy "主手持有的武器的ID"
-scoreboard objectives add zyy.shotcast.weapon.off_weapon_id dummy "副手持有的武器的ID"
+scoreboard objectives add zyy.shotcast.weapon.selected_weapon_id dummy "主手持有的武器的ID"
 
 #武器类型对应计分值
-scoreboard players set gun.rifel zyy.shotcast.weapon.main_weapon_id 1
-scoreboard players set gun.sniper zyy.shotcast.weapon.main_weapon_id 2
-scoreboard players set thrower zyy.shotcast.weapon.main_weapon_id -1
-scoreboard players set march.knife zyy.shotcast.weapon.main_weapon_id -2
+scoreboard players set gun.rifel zyy.shotcast.weapon.selected_weapon_id 1
+scoreboard players set gun.sniper zyy.shotcast.weapon.selected_weapon_id 2
+scoreboard players set thrower zyy.shotcast.weapon.selected_weapon_id -1
+scoreboard players set march.knife zyy.shotcast.weapon.selected_weapon_id -2
 
-#武器射击冷却时间对应计分值
+#武器射击冷却时间对应计分值(玩家的所有枪械延迟都使用这个计分板)
 scoreboard players set gun.rifel zyy.shotcast.weapon.cooldown.shoot 4
 scoreboard players set gun.sniper zyy.shotcast.weapon.cooldown.shoot 30
 scoreboard players set thrower zyy.shotcast.weapon.cooldown.shoot 24
 
-#武器换蛋冷却时间对应计分值
+#武器换弹冷却时间对应计分值(这个计分板不应该有玩家数据)
 scoreboard players set gun.rifel zyy.shotcast.weapon.cooldown.shoot 4
 scoreboard players set gun.sniper zyy.shotcast.weapon.cooldown.shoot 30
 scoreboard players set thrower zyy.shotcast.weapon.cooldown.shoot 24
@@ -93,7 +103,6 @@ scoreboard objectives add zyy.shotcast.motion_x dummy "X速度"
 scoreboard objectives add zyy.shotcast.motion_y dummy "y速度"
 scoreboard objectives add zyy.shotcast.motion_z dummy "z速度"
 
-function mm:preload
-execute if score mm_shootcast_load mm_main matches 1 run tellraw @a [{"text":"[枪械附属] v0.0.1 ","color":"aqua"},{"text":"by 在与有","color":"purple"},{"text":"已成功加载!","color":"yellow"}]
-execute unless score mm_shootcast_load mm_main matches 1 run tellraw @a [{"text":"[枪械附属] v0.0.1 ","color":"aqua"},{"text":"by 在与有","color":"purple"},{"text":"加载失败！请重新加载本附属包以调整优先级！","color":"red"}]
-scoreboard players reset mm_shootcast_load mm_main
+execute if score mm_shootcast_load zyy.shotcast.uid matches 1 run tellraw @a [{"text":"[枪械附属] v0.0.1 ","color":"aqua"},{"text":"by 在与有","color":"purple"},{"text":"加载成功!欢迎使用！","color":"green"}]
+execute unless score mm_shootcast_load zyy.shotcast.uid matches 1 run tellraw @a [{"text":"[枪械附属] v0.0.1 ","color":"aqua"},{"text":"by 在与有","color":"purple"},{"text":"加载异常！请检查前置数据包","color":"red"},{"text":" [游戏大师] ","color":"aqua"},{"text":"是否正常加载。如果已加载前置","color":"red"},{"text":"[请点击我调整优先级] ","color":"green","clickEvent":{"action":"run_command","value":"/execute as @s run function shotcast:adjust_priority"}}]
+scoreboard players reset mm_shootcast_load zyy.shotcast.uid 

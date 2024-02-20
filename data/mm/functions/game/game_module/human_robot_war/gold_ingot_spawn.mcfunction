@@ -1,0 +1,1 @@
+function mm:game/game_module/showdown/gold_ingot_spawn

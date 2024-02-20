@@ -1,5 +1,5 @@
 ##重置冷却，并且刷新一次手持武器id
-execute as @s run function shotcast:player_behave/use_weapon/switched_weapon/gun/sniper
+execute as @s run function shotcast:player_behave/use_weapon/switched_main_weapon/gun/sniper
 
 
 ##如果主手的武器还有弹药，且未被切换过，则填充弹药
