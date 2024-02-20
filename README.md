@@ -1,2 +1,3 @@
 # minecraft-sight-shoot
-A Datapack in minecraft
+A Datapack of minecraft
+Depend on Minigame Master
