@@ -103,6 +103,7 @@ scoreboard objectives add zyy.shotcast.motion_x dummy "X速度"
 scoreboard objectives add zyy.shotcast.motion_y dummy "y速度"
 scoreboard objectives add zyy.shotcast.motion_z dummy "z速度"
 
-execute if score mm_shootcast_load zyy.shotcast.uid matches 1 run tellraw @a [{"text":"[枪械附属] v0.0.1 ","color":"aqua"},{"text":"by 在与有","color":"purple"},{"text":"加载成功!欢迎使用！","color":"green"}]
-execute unless score mm_shootcast_load zyy.shotcast.uid matches 1 run tellraw @a [{"text":"[枪械附属] v0.0.1 ","color":"aqua"},{"text":"by 在与有","color":"purple"},{"text":"加载异常！请检查前置数据包","color":"red"},{"text":" [游戏大师] ","color":"aqua"},{"text":"是否正常加载。如果已加载前置","color":"red"},{"text":"[请点击我调整优先级] ","color":"green","clickEvent":{"action":"run_command","value":"/execute as @s run function shotcast:adjust_priority"}}]
+execute if score mm_shootcast_load zyy.shotcast.uid matches 1 run tellraw @a [{"text":"[枪械附属] v0.0.1 ","color":"aqua"},{"text":"by 在与有","color":"purple"},{"text":"加载成功!欢迎使用！","color":"green"},{"text":"[点击我卸载本包] ","color":"green","clickEvent":{"action":"run_command","value":"/execute as @s run function shotcast:uni"}}]
+execute unless score mm_shootcast_load zyy.shotcast.uid matches 1 run tellraw @a [{"text":"[枪械附属] v0.0.1 ","color":"aqua"},{"text":"by 在与有","color":"purple"},{"text":"加载异常！请检查前置数据包","color":"red"},{"text":"[游戏大师]","underlined":true,"color":"aqua","clickEvent":{"action":"open_url","value":"https://github.com/Zaiyuyou/Datapack-Minigame-Master"},"hoverEvent":{"action":"show_text","contents":"点击访问前置项目的开源地址"}},{"text":"是否正常加载。如果已加载前置","color":"red"},{"text":"[点击我禁用本包] ","color":"green","clickEvent":{"action":"run_command","value":"/execute as @s run function shotcast:disable_pack"}}]
 scoreboard players reset mm_shootcast_load zyy.shotcast.uid 
+
