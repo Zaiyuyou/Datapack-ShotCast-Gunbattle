@@ -1,1 +1,1 @@
-title @s actionbar [{"text": "膛内仍有子弹，射出后才能装填弹药！","bold": true,"color": "red"}]
+title @s actionbar [{"text": "膛内仍有子弹,射出后才能装填弹药!","bold": true,"color": "red"}]
